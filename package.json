@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build C:\\Users\\eveli\\Git\\Fullstack\\osa11\\own-project\\build"
+    "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build ..\\build"
   },
   "author": "Eveliina",
   "license": "ISC",
