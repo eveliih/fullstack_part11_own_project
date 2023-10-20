@@ -19,46 +19,12 @@ jobs:
           node-version: "16"
       - name: Install dependencies
         run: npm install
-        <!--
-      - name: lint
-        run: npm run eslint
-      - name: build
-        run: npm run build:ui
-      - name: Build failure notification
-        uses: rjstone/discord-webhook-notify@v1
-        if: failure()
-        with:
-            severity: error
-            details: Build failed!
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: test
-        run: npm run test
-      - name: e2e tests
-        uses: cypress-io/github-action@v5
-        with:
-          command: npm run test:e2e
-          start: npm run start-prod
-          wait-on: http://localhost:3000
-          -->
       - name: Deploy to Fly.i
         if: github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-        <!--
-      - name: Successful deploy notification
-        uses: rjstone/discord-webhook-notify@v1
-        if: success()
-        with:
-            severity: info
-            username: Bot
-            color: '#45f542'
-            avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
-            description: To https://pokepoke.fly.dev/ by eveliih
-            footer: Info
-            text: A new version of Project is now deployed!
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-            -->
+
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
