@@ -8,7 +8,8 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build ..\\build"
+    "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build ..\\build",
+    "build:ubuntu": "rm -rf build && cd ./front-end/ && npm run build && cp -r build ../build"
   },
   "author": "Eveliina",
   "license": "ISC",
