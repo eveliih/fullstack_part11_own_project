@@ -19,6 +19,8 @@ jobs:
           node-version: "16"
       - name: Install dependencies
         run: npm install
+      - name: build
+        run: npm run build:ui
       - name: Deploy to Fly.i
         if: github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')
         run: flyctl deploy --remote-only
