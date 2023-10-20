@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build ..\\build",
-    "build:ubuntu": "rm -rf build && cd ./front-end/ && npm install && npm run build && cp -r build ../build"
+    "build:ubuntu": "rm -rf build && cd ./front-end/ && npm install && npm run build && cp -r build ../build",
+    "eslint": "eslint './**/*.{js,jsx}'"
   },
   "author": "Eveliina",
   "license": "ISC",
@@ -26,6 +27,9 @@
   },
   "devDependencies": {
     "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-jest": "^23.11.0",
+    "eslint-plugin-react": "^7.19.0",
     "nodemon": "^2.0.20"
   }
 }

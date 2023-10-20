@@ -21,6 +21,8 @@ jobs:
         run: npm install
       - name: build
         run: npm run build:ubuntu
+      - name: Lint
+        run: npm run eslint
       - name: Deploy to Fly.i
         if: github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')
         run: flyctl deploy --remote-only
