@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: build
-        run: npm run build:ui
+        run: rm -rf build && cd ./front-end/ && npm run build && cp -r build ../build
       - name: Deploy to Fly.i
         if: github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')
         run: flyctl deploy --remote-only
