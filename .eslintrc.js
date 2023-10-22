@@ -1,18 +1,23 @@
 module.exports = {
   'env': {
     'browser': true,
+    'commonjs': true,
+    'es2021': true,
     'node': true,
-    'es6': true,
     'cypress/globals': true
   },
-
-  'plugins': [ 'cypress'],
-  'extends': 'eslint:recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
+  ],
   'overrides': [
   ],
   'parserOptions': {
-    'ecmaVersion': 2018
+    'ecmaVersion': 'latest'
   },
+  'plugins': [
+    'react', 'jest', 'cypress'
+  ],
   'rules': {
     'indent': [
       'error',
@@ -38,6 +43,11 @@ module.exports = {
     'arrow-spacing': [
       'error', { 'before': true, 'after': true }
     ],
-    'no-console': 0,
+    'no-console': 0
+  },
+  'settings': {
+    'react': {
+      'version': 'detect'
+    }
   }
 }
