@@ -10,7 +10,12 @@
     "lint": "eslint .",
     "build:ui": "rd /s/q build && cd ./front-end/ && npm run build && xcopy /I/E build ..\\build",
     "build:ubuntu": "rm -rf build && cd ./front-end/ && npm install && npm run build && cp -r build ../build",
-    "eslint": "eslint './**/*.{js,jsx}'"
+    "eslint": "eslint './**/*.{js,jsx}'",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "cypress:open": "cypress open",
+    "start:test": "SET NODE_ENV=test & node index.js",
+    "test:e2e": "cypress run"
   },
   "author": "Eveliina",
   "license": "ISC",
@@ -26,6 +31,7 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
+    "cypress": "^13.3.2",
     "eslint": "^8.27.0",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-jest": "^23.11.0",
