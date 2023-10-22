@@ -14,7 +14,7 @@ module.exports = {
   'overrides': [
   ],
   'parserOptions': {
-    'ecmaVersion': 'latest'
+    'ecmaVersion': 12
   },
   'rules': {
     'indent': [
