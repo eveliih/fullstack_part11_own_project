@@ -7,7 +7,7 @@ module.exports = {
     "cypress/globals": true
   },
  
- 'plugins': ['react-refresh', 'jest', 'cypress'],
+ 'plugins': [ 'cypress'],
   'extends': 'eslint:recommended',
   'overrides': [
   ],
