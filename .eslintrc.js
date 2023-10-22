@@ -5,6 +5,11 @@ module.exports = {
     'es2021': true,
     'cypress/globals': true
   },
+  'globals': {
+    'cy': true,
+    'Cypress': true,
+  },
+  
   'extends': 'eslint:recommended',
   'overrides': [
   ],
