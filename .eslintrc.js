@@ -1,9 +1,10 @@
 module.exports = {
   'env': {
+    "browser": true,
     'node': true,
-    'commonjs': true,
-    'es2021': true,
-    'cypress/globals': true
+    "es6": true,
+    "jest/globals": true,
+    "cypress/globals": true
   },
  
  'plugins': ['react-refresh', 'jest', 'cypress'],
