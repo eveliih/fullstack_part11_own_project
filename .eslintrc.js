@@ -5,16 +5,13 @@ module.exports = {
     'es2021': true,
     'cypress/globals': true
   },
-  'globals': {
-    'cy': true,
-    'Cypress': true,
-  },
-  
+ 
+ 'plugins': ['react-refresh', 'jest', 'cypress'],
   'extends': 'eslint:recommended',
   'overrides': [
   ],
   'parserOptions': {
-    'ecmaVersion': 12
+    'ecmaVersion': 2018
   },
   'rules': {
     'indent': [
